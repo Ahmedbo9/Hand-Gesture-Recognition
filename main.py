@@ -17,9 +17,10 @@ while True:
     print(coords)
     if frame is not None:
         cv2.imshow('frame', frame)
-        cv2.waitKey(1)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
+        hand_tracker.release()
+        cap.release()
+        cv2.destroyAllWindows()
         break
-
 
